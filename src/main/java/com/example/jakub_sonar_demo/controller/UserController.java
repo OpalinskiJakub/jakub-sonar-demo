@@ -5,6 +5,7 @@ import com.example.jakub_sonar_demo.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @RestController
@@ -51,7 +52,10 @@ public class UserController {
 
     @GetMapping("/bug3")
     public int formatBug() {
-        LOGGER.info(String.format("Name: %s, Age: %d", "Alice", 30));
+        if (LOGGER.isLoggable(Level.INFO)) {
+            LOGGER.info(String.format("Name: %s, Age: %d", "Alice", 30));
+        }
         return 1;
     }
+
 }
