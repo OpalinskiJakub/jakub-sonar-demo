@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+if ! grep -qE "\\[[A-Z]\\]" "$1"; then
+  sed -i '1s/^/[A] /' "$1"
+fi
