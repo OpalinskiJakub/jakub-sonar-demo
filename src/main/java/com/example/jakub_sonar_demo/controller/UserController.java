@@ -43,4 +43,21 @@ public class UserController {
         }
         return "ok";
     }
+
+    @GetMapping("/bug1")
+    public int arrayBug() {
+        int[] arr = new int[2];
+        return arr[5];
+    }
+
+    @GetMapping("/bug2")
+    public boolean wrongStringCompare(@RequestParam String input) {
+        return input == "admin";
+    }
+
+    @GetMapping("/bug3")
+    public int formatBug() {
+        System.out.printf("Name: %s, Age: %d", "Alice");
+        return 1;
+    }
 }

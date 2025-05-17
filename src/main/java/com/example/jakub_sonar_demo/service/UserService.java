@@ -32,4 +32,22 @@ public class UserService {
         String result = null;
         return result.toLowerCase();
     }
+
+    public void printUser(String id) {
+        System.out.println("User: " + userMap.get(id).getName());
+    }
+
+    public void logicalBug() {
+        boolean a = true;
+        boolean b = true;
+        if (a == true || b == true) {
+            System.out.println("This will always be true");
+        }
+    }
+
+    public void unsafeCast() {
+        Object obj = "hello";
+        Integer x = (Integer) obj;
+        System.out.println(x);
+    }
 }
