@@ -35,17 +35,6 @@ public class UserController {
         return "static string";
     }
 
-    @GetMapping("/try")
-    public String riskyEndpoint() {
-        try {
-            int result = 5 / 0;
-        } catch (ArithmeticException e) {
-            LOGGER.warning("Division by zero");
-            return "Division by zero error";
-        }
-        return "ok";
-    }
-
     @GetMapping("/bug1")
     public int arrayBug() {
         int[] arr = new int[2];

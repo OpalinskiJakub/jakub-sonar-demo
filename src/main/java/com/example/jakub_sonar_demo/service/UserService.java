@@ -3,6 +3,7 @@ package com.example.jakub_sonar_demo.service;
 import com.example.jakub_sonar_demo.model.User;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UserService {
@@ -42,7 +43,7 @@ public class UserService {
 
     public void printUser(String id) {
         User user = userMap.get(id);
-        if (user != null) {
+        if (user != null && LOGGER.isLoggable(Level.INFO)) {
             LOGGER.info(String.format("User: %s", user.getName()));
         }
     }
@@ -55,11 +56,14 @@ public class UserService {
         }
     }
 
+
     public void unsafeCast() {
         Object obj = "42";
         try {
             Integer x = Integer.parseInt((String) obj);
-            LOGGER.info(String.format("Parsed int: %d", x));
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.info(String.format("Parsed int: %d", x));
+            }
         } catch (NumberFormatException e) {
             LOGGER.warning("Cast failed: " + e.getMessage());
         }
