@@ -43,7 +43,7 @@ public class UserService {
     public void printUser(String id) {
         User user = userMap.get(id);
         if (user != null) {
-            LOGGER.info("User: " + user.getName());
+            LOGGER.info(String.format("User: %s", user.getName()));
         }
     }
 
@@ -59,7 +59,7 @@ public class UserService {
         Object obj = "42";
         try {
             Integer x = Integer.parseInt((String) obj);
-            LOGGER.info("Parsed int: " + x);
+            LOGGER.info(String.format("Parsed int: %d", x));
         } catch (NumberFormatException e) {
             LOGGER.warning("Cast failed: " + e.getMessage());
         }

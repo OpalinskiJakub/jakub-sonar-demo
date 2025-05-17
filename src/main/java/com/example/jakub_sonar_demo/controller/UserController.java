@@ -5,10 +5,13 @@ import com.example.jakub_sonar_demo.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
+    private static final Logger LOGGER = Logger.getLogger(UserController.class.getName());
 
     private final UserService userService = new UserService();
 
@@ -35,8 +38,9 @@ public class UserController {
     @GetMapping("/try")
     public String riskyEndpoint() {
         try {
-            int x = 5 / 0;
+            int result = 5 / 0;
         } catch (ArithmeticException e) {
+            LOGGER.warning("Division by zero");
             return "Division by zero error";
         }
         return "ok";
@@ -58,7 +62,7 @@ public class UserController {
 
     @GetMapping("/bug3")
     public int formatBug() {
-        System.out.printf("Name: %s, Age: %d%n", "Alice", 30);
+        LOGGER.info(String.format("Name: %s, Age: %d", "Alice", 30));
         return 1;
     }
 }
