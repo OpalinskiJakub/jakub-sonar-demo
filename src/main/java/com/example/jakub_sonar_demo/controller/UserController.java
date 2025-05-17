@@ -34,12 +34,13 @@ public class UserController {
         return s.toString();
     }
 
-    public String check(String input) {
-        if (input == "test") {
-            return "A";
-        } else if (input.equals("test")) {
-            return "B";
+    @GetMapping("/try")
+    public String riskyEndpoint() {
+        try {
+            int x = 5 / 0;
+        } catch (Exception e) {
+
         }
-        return "C";
+        return "ok";
     }
 }

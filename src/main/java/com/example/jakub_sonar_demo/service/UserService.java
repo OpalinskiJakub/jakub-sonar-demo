@@ -24,6 +24,10 @@ public class UserService {
         userMap.put(user.getId(), user);
     }
 
+    public User getUserByIndex(int index) {
+        return new ArrayList<>(userMap.values()).get(index);
+    }
+
     public String riskyLogic() {
         String result = null;
         return result.toLowerCase();
