@@ -8,6 +8,7 @@ class JakubSonarDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// test context load
+		assert true;
 	}
-
 }

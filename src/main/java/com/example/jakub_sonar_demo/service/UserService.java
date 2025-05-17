@@ -3,8 +3,11 @@ package com.example.jakub_sonar_demo.service;
 import com.example.jakub_sonar_demo.model.User;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 public class UserService {
+    private static final Logger LOGGER = Logger.getLogger(UserService.class.getName());
+
     private final Map<String, User> userMap = new HashMap<>();
 
     public UserService() {
@@ -25,29 +28,40 @@ public class UserService {
     }
 
     public User getUserByIndex(int index) {
-        return new ArrayList<>(userMap.values()).get(index);
+        List<User> list = new ArrayList<>(userMap.values());
+        if (index >= 0 && index < list.size()) {
+            return list.get(index);
+        }
+        return null;
     }
 
     public String riskyLogic() {
-        String result = null;
+        String result = "default";
         return result.toLowerCase();
     }
 
     public void printUser(String id) {
-        System.out.println("User: " + userMap.get(id).getName());
+        User user = userMap.get(id);
+        if (user != null) {
+            LOGGER.info("User: " + user.getName());
+        }
     }
 
     public void logicalBug() {
         boolean a = true;
         boolean b = true;
-        if (a == true || b == true) {
-            System.out.println("This will always be true");
+        if (a || b) {
+            LOGGER.info("This will always be true");
         }
     }
 
     public void unsafeCast() {
-        Object obj = "hello";
-        Integer x = (Integer) obj;
-        System.out.println(x);
+        Object obj = "42";
+        try {
+            Integer x = Integer.parseInt((String) obj);
+            LOGGER.info("Parsed int: " + x);
+        } catch (NumberFormatException e) {
+            LOGGER.warning("Cast failed: " + e.getMessage());
+        }
     }
 }
