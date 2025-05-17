@@ -1,0 +1,7 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=OpalinskiJakub_jakub-sonar-demo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=OpalinskiJakub_jakub-sonar-demo)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=OpalinskiJakub_jakub-sonar-demo&metric=bugs)](https://sonarcloud.io/summary/new_code?id=OpalinskiJakub_jakub-sonar-demo)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=OpalinskiJakub_jakub-sonar-demo&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=OpalinskiJakub_jakub-sonar-demo)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=OpalinskiJakub_jakub-sonar-demo&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=OpalinskiJakub_jakub-sonar-demo)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=OpalinskiJakub_jakub-sonar-demo&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=OpalinskiJakub_jakub-sonar-demo)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=OpalinskiJakub_jakub-sonar-demo&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=OpalinskiJakub_jakub-sonar-demo)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=OpalinskiJakub_jakub-sonar-demo&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=OpalinskiJakub_jakub-sonar-demo)
